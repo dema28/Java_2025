@@ -9,8 +9,8 @@ package HomeWork02;
 
 public class HW02_1 {
     public static void main(String[] args) {
-        int a = 8;
-        int b = 3;
+        int a = 257;
+        int b = 22;
         int result = a + b;
         int result1 = a - b;
         int result2 = a * b;
