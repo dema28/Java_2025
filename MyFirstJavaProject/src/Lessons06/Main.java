@@ -9,8 +9,13 @@ public class Main {
         System.out.println(str.charAt(5));
 
         System.out.println(str.equals("Hello, world!"));
+        System.out.println(str.equalsIgnoreCase("Hello, WorLd!"));
+
+        System.out.println(str.toString());
+
 
         System.out.println(str.compareTo("AAA"));
+
 
 
         System.out.println(str);
