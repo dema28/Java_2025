@@ -28,7 +28,6 @@ public class Main4 {
             }
             System.out.println();
         }
-
     }
 
     private static int[][] transposeMatrix(int[][] matrix) {
@@ -41,7 +40,6 @@ public class Main4 {
                 transposedMatrix[j][i] = matrix[i][j];
             }
         }
-
         return transposedMatrix;
     }
 }
