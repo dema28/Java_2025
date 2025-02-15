@@ -1,4 +1,4 @@
-package Lessons05;
+package Novicov.Lessons05;
 
 public class Main2 {
     public static void main(String[] args) {
