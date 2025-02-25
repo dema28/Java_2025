@@ -16,12 +16,28 @@ public class Main2 {
         } while (index != -1);
         return result;
     }
+
+    /*
+    Закоментированный код относится к верхней части кода.
+     */
+//    public static void main(String[] args) {
+//
+//        int count = countSubString("Посмотрите как Рите нравится ритм", "рит");
+//        System.out.println("Count: " + count);
+//        countSubString("Посмотрите как Рите нравится ритм", "р");
+//
+//    }
+
+    /*
+    Нижний код он самостоятельный.
+     */
     public static void main(String[] args) {
+        int sum = (sum(1, sum(3, 2)));
+        System.out.println(sum);
+    }
 
-        int count = countSubString("Посмотрите как Рите нравится ритм", "рит");
-        System.out.println("Count: " + count);
-        countSubString("Посмотрите как Рите нравится ритм", "р");
-
+    public static int sum(int a, int b) {
+        return a + b;
     }
 
 }
