@@ -25,12 +25,12 @@ public class TextScanner {
 
         Book b = new Book(new Page[] {p1, p3});
 
-        TextScanner scanner = new TextScanner();
-
-        System.out.println(scaner.scan(book));
-        System.out.println(scanner.scan(p2));
-        scanner.scan("");
-        scanner.scan(p1);
+////        TextScanner scanner = new TextScanner();
+//
+//        System.out.println(scaner.scan(book));
+//        System.out.println(scanner.scan(p2));
+//        scanner.scan("");
+//        scanner.scan(p1);
 
 
     }
