@@ -5,11 +5,17 @@ public class Main {
         BankAccount checking = new BankAccount("1234567");
         System.out.println(checking.makeSummary());
 
-        BankAccount anotherAccount = new BankAccount("87965329",1000);
-        System.out.println(anotherAccount.getAccountNo());
+        BankAccount anotherAccount = BankAccount.withDefaultOverdraft("87965329",1000);
+        System.out.println(anotherAccount.makeSummary());
 
-        BankAccount otherAccount = new BankAccount("6464136",1000,1000);
-        System.out.println(otherAccount.getAccountNo());
+        BankAccount withOverDraft = BankAccount.withDefaultBalance("6464136",200);
+        System.out.println(withOverDraft.makeSummary());
+
+        BankAccount[] myAccounts = {
+                new BankAccount("1234567"),
+                new BankAccount("475850540", 0,200),
+                new BankAccount("687058548")
+        };
 
 //        checking.credit(100);
 //

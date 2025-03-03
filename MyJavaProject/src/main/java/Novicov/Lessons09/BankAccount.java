@@ -3,22 +3,41 @@ package Novicov.Lessons09;
 public class BankAccount {
 
     private String accountNo;
-    private int balance = 0;
-    private int maxOverdraft = 0;
+    private int balance;
+    private int maxOverdraft;
     private boolean blocked = false;
 
 
-    public BankAccount(String account) {
-        this(accountNo, 0, 1000);
+    public static BankAccount withDefaultOverdraft(String accountNo, int balance) {
+        return new BankAccount(accountNo, balance, 1000);
     }
 
-    public BankAccount(String accountNo) {
-        this(accountNo,0 );
+    public static BankAccount withDefaultBalance(String accountNo, int maxOverdraft) {
+        return new BankAccount(accountNo, 0, maxOverdraft);
     }
+
+
+    public BankAccount(String accountNo) {
+        this(accountNo,0,0);
+    }
+
+//    public BankAccount(String accountNo,int balance) {
+//        this(accountNo, balance,0);
+//    }
+//
+//    public BankAccount(String accountNo,int balance,int maxOverdraft) {
+//        this(accountNo,0,0)
+//    }
 
     public BankAccount(String accountNo, int balance, int maxOverdraft) {
         if (accountNo.length() < 5) {
             System.out.println("Invalid account number");
+        }
+        if (balance < 0) {
+            System.out.println("Invalid initial balance");
+        }
+        if (maxOverdraft < 0) {
+            System.out.println("Invalid maximum overdraft limit");
         }
         this.accountNo = accountNo;
         this.balance = balance;
@@ -69,6 +88,7 @@ public class BankAccount {
 
     public String makeSummary() {
         return (isBlocked() ? "Blocked " : "") +
-                "Account No: " + accountNo + ", Balance: $" + balance;
+                "Account No: " + accountNo + ", Balance: $" + balance +
+                "\nmax overdraft: " + maxOverdraft;
     }
 }
