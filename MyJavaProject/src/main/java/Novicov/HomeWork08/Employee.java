@@ -6,6 +6,11 @@ public class Employee {
     private String gender;
     private double dailySalary;
 
+    public Employee(String name, double dailySalary) {
+        this.name = name;
+        this.dailySalary = dailySalary;
+    }
+
     public Employee(String name, int age, String gender, double dailySalary) {
         this.name = name;
         this.age = age;
@@ -13,43 +18,21 @@ public class Employee {
         this.dailySalary = dailySalary;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public double getDailySalary() {
-        return dailySalary;
-    }
-
-    public void setDailySalary(double dailySalary) {
-        this.dailySalary = dailySalary;
-    }
-
     public double getSalary(Month[] monthArray) {
         double totalSalary = 0;
         for (Month month : monthArray) {
-            totalSalary += month.getWorkingDays() * dailySalary;
+            totalSalary += dailySalary * month.getWorkDays();
         }
         return totalSalary;
     }
+
+    public Manager convertToManager(int numberOfSubordinates) {
+        return new Manager(name, age, gender, dailySalary, numberOfSubordinates);
+    }
+
+    // Getters
+    public String getName() { return name; }
+    public int getAge() { return age; }
+    public String getGender() { return gender; }
+    public double getDailySalary() { return dailySalary; }
 }

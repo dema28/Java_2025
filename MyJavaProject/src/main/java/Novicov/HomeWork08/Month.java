@@ -1,14 +1,14 @@
 package Novicov.HomeWork08;
 
-public class Month {
+public final class Month {
     private final String name;
     private final int days;
-    private final int workingDays;
+    private final int workDays;
 
-    public Month(String name, int days, int workingDays) {
+    public Month(String name, int days, int workDays) {
         this.name = name;
         this.days = days;
-        this.workingDays = workingDays;
+        this.workDays = workDays;
     }
 
     public String getName() {
@@ -19,12 +19,7 @@ public class Month {
         return days;
     }
 
-    public int getWorkingDays() {
-        return workingDays;
-    }
-
-    @Override
-    public String toString() {
-        return "Month{name='" + name + "', days=" + days + ", workingDays=" + workingDays + "}";
+    public int getWorkDays() {
+        return workDays;
     }
 }
