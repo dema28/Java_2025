@@ -1,36 +1,33 @@
 package Novicov.Lessons10;
 
 public class TextScanner {
-
-    public String scanBook(Book book) {
+    public String scan(Book book) {
         String text ="";
         for(Page p : book.pages) {
             text += p.text;
         }
         return text;
     }
-
     public String scan(Page page) {
         return page.text;
     }
 
-    public String scan(String text) {
-        return text;
+    public int scan(String text) {
+        return 0;
     }
 
+
     public static void main(String[] args) {
-        Page p1 = new Page("1");
-        Page p2 = new Page("2");
-        Page p3 = new Page("3");
+        Page p1 = new Page("This\nis\npage 1");
+        Page p2 = new Page("This\nis\npage 2");
+        Page p3 = new Page("This\nis\npage 3");
 
-        Book b = new Book(new Page[] {p1, p3});
+        TextScanner scanner = new TextScanner();
 
-////        TextScanner scanner = new TextScanner();
-//
-//        System.out.println(scaner.scan(book));
-//        System.out.println(scanner.scan(p2));
-//        scanner.scan("");
-//        scanner.scan(p1);
+        Book book = new Book(new Page[]{p1, p3});
+
+        System.out.println(scanner.scan(book));
+        System.out.println(scanner.scan(p2));
 
 
     }
@@ -50,5 +47,9 @@ class Book {
     Book(Page[] pages) {
         this.pages = pages;
     }
-
 }
+
+
+
+
+
