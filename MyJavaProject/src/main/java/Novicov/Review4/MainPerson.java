@@ -7,10 +7,6 @@ public class MainPerson {
 
         Person jane = null;
         jane = new Person();
-        String a = "ddd";
-
-        System.out.println(a);
-        System.out.println("name" + jane.name + "age" + jane.age);
 
         jane.name = "Jane";
         jane.age = 10;
