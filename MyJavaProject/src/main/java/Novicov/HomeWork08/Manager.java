@@ -1,7 +1,8 @@
 package Novicov.HomeWork08;
 
-public final class Manager extends BaseEmployee {
-    private int numberOfSubordinates;
+public class Manager extends BaseEmployee {
+    private final int numberOfSubordinates;
+    private static final double BONUS_COEFFICIENT = 0.01; // Константа для надбавки
 
     public Manager(String name, double dailySalary, int age, char gender, int numberOfSubordinates) {
         super(name, dailySalary);
@@ -11,6 +12,10 @@ public final class Manager extends BaseEmployee {
     @Override
     public double getSalary(Month[] monthArray) {
         double salary = super.getSalary(monthArray);
-        return salary * (1 + numberOfSubordinates * 0.01); // бонус за подчиненных
+        return salary * (1 + numberOfSubordinates * BONUS_COEFFICIENT); // Используем константу
+    }
+
+    public int getNumberOfSubordinates() {
+        return numberOfSubordinates;
     }
 }

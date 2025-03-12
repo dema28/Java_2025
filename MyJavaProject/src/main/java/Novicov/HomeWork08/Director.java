@@ -1,13 +1,17 @@
 package Novicov.HomeWork08;
 
-public class Director extends Manager {
-    public Director(String name, int age, String gender, double dailySalary, int numberOfSubordinates) {
-        super(name, age, gender, dailySalary, numberOfSubordinates);
+import javax.net.ssl.ManagerFactoryParameters;
+
+public final class Director extends Manager {
+    private static final double BONUS_COEFFICIENT = 0.03; // Константа для надбавки
+
+    public Director(String name, double dailySalary, int age, char gender, int numberOfSubordinates) {
+        super(name, dailySalary, age, gender, numberOfSubordinates);
     }
 
     @Override
     public double getSalary(Month[] monthArray) {
         double baseSalary = super.getSalary(monthArray);
-        return baseSalary * (1 + 0.03 * getNumberOfSubordinates());
+        return baseSalary * (1 + getNumberOfSubordinates() * BONUS_COEFFICIENT); // Используем константу
     }
 }
