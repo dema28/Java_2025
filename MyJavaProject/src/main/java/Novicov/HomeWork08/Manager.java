@@ -1,18 +1,16 @@
 package Novicov.HomeWork08;
 
-public class Manager extends Employee {
+public final class Manager extends BaseEmployee {
     private int numberOfSubordinates;
 
-    public Manager(String name, int age, String gender, double dailySalary, int numberOfSubordinates) {
-        super(name, age, gender, dailySalary);
+    public Manager(String name, double dailySalary, int age, char gender, int numberOfSubordinates) {
+        super(name, dailySalary);
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
     @Override
     public double getSalary(Month[] monthArray) {
-        double baseSalary = super.getSalary(monthArray);
-        return baseSalary * (1 + 0.01 * numberOfSubordinates);
+        double salary = super.getSalary(monthArray);
+        return salary * (1 + numberOfSubordinates * 0.01); // бонус за подчиненных
     }
-
-    public int getNumberOfSubordinates() { return numberOfSubordinates; }
 }
