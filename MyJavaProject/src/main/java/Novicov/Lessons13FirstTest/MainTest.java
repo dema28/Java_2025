@@ -14,7 +14,7 @@ public class MainTest {
         WebDriver driver = new ChromeDriver();
 
         // Разворачиваем браузер на весь экран
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
         // Открываем страницу
         driver.get("https://demoqa.com/text-box");
